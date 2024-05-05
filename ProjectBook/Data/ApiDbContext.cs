@@ -14,5 +14,6 @@ namespace ProjectBook.Data
         public DbSet<ProductDetails> ProductDetails { get; set; }
         public DbSet<User> Users { get; set; }  
         public DbSet<Author> Author { get; set; }   
+        public DbSet<Customer> Customers { get; set; }
     }
 }

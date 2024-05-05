@@ -12,5 +12,18 @@ namespace ProjectBook.Models
         [JsonPropertyName("date_of_birth")]
         public DateTime DateOfBirth { get; set; }
         public ICollection<Product> Products { get; set; }
+
+        public Author ()
+        {
+
+        }
+
+        public static Author CopyIdAndName(int id,string name )
+        {
+            var author = new Author();
+            author.Id = id;
+            author.Name = name;
+            return author;
+        }
     }
 }

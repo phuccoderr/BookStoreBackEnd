@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using ProjectBook.Data;
+using ProjectBook.DTO;
 using ProjectBook.Helpers;
 using ProjectBook.Models;
 using ProjectBook.Request;
@@ -101,26 +102,29 @@ namespace ProjectBook.Controllers
             productRequest.CreatedAt = DateTime.Now;
             productRequest.UpdatedAt = DateTime.Now;
 
-            var author = _dbContext.Author.Find(productRequest.AuthorId);
-            if (author == null)
+            if (productRequest.AuthorId > 0)
             {
-                return BadRequest("Author not Found");
+                var author = _dbContext.Author.Find(productRequest.AuthorId);
+                if (author == null)
+                {
+                    return BadRequest("Author not Found");
+                }
+                productRequest.Author = author;    
             }
-            productRequest.Author = author;    
+            
             
 
-            var category = _dbContext.Categories.Find(productRequest.CategoryId);
-            if (category == null)
+            if (productRequest.CategoryId > 0)
             {
-                return BadRequest("Category Not Found");
+                var category = _dbContext.Categories.Find(productRequest.CategoryId);
+                if (category == null)
+                {
+                    return BadRequest("Category Not Found");
+                }
+                productRequest.Category = category;
             }
-            productRequest.Category = category;
 
             // Product Details
-            foreach (var detail in productRequest.ProductDetails.ToList())
-            {
-                productRequest.addProductDetails(detail.Name, detail.Value);
-            }
 
             // CLOUDINARY
             if (file != null)
@@ -282,7 +286,7 @@ namespace ProjectBook.Controllers
             }
             _cloudinaryService.deleteImage(currentProducts.MainImage);
 
-            var listImages = currentProducts.ProductImages.ToList();
+            var listImages = _dbContext.ProductImages.Where(p => p.ProductId == id).ToList();
             foreach (var image in listImages)
             {
                 _cloudinaryService.deleteImage(image.Name);
@@ -291,6 +295,32 @@ namespace ProjectBook.Controllers
             _dbContext.Products.Remove(currentProducts);
             _dbContext.SaveChanges();
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("authors")]
+        public IActionResult GetAuthor()
+        {
+            var listAuthors = _dbContext.Author;
+            List<AuthorDTO> authorsDTO = new List<AuthorDTO>();
+            foreach (var author in listAuthors)
+            {
+                authorsDTO.Add(new AuthorDTO(author.Id, author.Name));
+            }
+            return Ok(authorsDTO);
+        }
+
+        [HttpGet]
+        [Route("categories")]
+        public IActionResult GetCategories()
+        {
+            var listCategories = _dbContext.Categories;
+            List<CategoryDTO> categoriesDTO = new List<CategoryDTO>();
+            foreach (var cate in listCategories)
+            {
+                categoriesDTO.Add(new CategoryDTO(cate.Id, cate.Name));
+            }
+            return Ok(categoriesDTO );
         }
     }
 }

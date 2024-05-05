@@ -14,5 +14,18 @@ namespace ProjectBook.Models
 
         public ICollection<Product> Products { get; set; }
 
+        public Category()
+        {
+
+        }
+
+        public static Category CopyIdAndName(int id ,string name)
+        {
+            Category copy = new Category();
+            copy.Id = id;
+            copy.Name = name;
+            return copy;
+        }
+
     }
 }
