@@ -22,11 +22,23 @@ namespace ProjectBook.Controllers.Frontend
         }
 
         [HttpGet("/c/{alias}/page/{pageNum}")]
-        public IActionResult ListProduct(string sort,string alias,int pageNum = 1)
+        public IActionResult ListProduct(string sort, string keyword,string alias,int pageNum = 1)
         {
             var cateId = categoryService.getCategory(alias);
-            var listProducts = productService.listByCategory(pageNum, cateId,sort);
+            var listProducts = productService.listByCategory(pageNum, cateId,sort, keyword);
             return Ok(listProducts);
+        }
+
+        [HttpGet("/p/{alias}")]
+        public IActionResult GetProduct(string alias)
+        {
+            var currentProduct = productService.getProductByAlias(alias);
+            if (currentProduct == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(currentProduct);
         }
 
     }

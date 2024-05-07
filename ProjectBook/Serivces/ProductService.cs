@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using ProjectBook.Data;
 using ProjectBook.Models;
 using ProjectBook.Response;
@@ -8,10 +10,10 @@ namespace ProjectBook.Serivces
     public class ProductService(ApiDbContext dbContext)
     {
         private readonly ApiDbContext _dbContext = dbContext;
-        public ProductPageResponse listByCategory(int pageNum,int cateId,string sort)
+        public ProductPageResponse listByCategory(int pageNum,int cateId,string sort,string keyword)
         {
             IQueryable<Product> products;
-            products = _dbContext.Products;
+           
             if (cateId > 0)
             {
                 products = _dbContext.Products.Where(p => p.CategoryId == cateId);
@@ -19,14 +21,20 @@ namespace ProjectBook.Serivces
            
             switch (sort)
             {
-                case "desc":
-                    products = products.OrderByDescending(u => u.Id);
+                case "max_price":
+                    products = _dbContext.Products.OrderByDescending(u => u.Price);
                     break;
-                case "asc":
-                    products = products.OrderBy(u => u.Id);
+                case "min_price":
+                    products = _dbContext.Products.OrderBy(u => u.Price);
                     break;
                 default:
+                    products = _dbContext.Products;
                     break;
+            }
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                products = products.Where(u => u.Name.Contains(keyword) || u.ShortDescription.Contains(keyword) || u.FullDescription.Contains(keyword));
             }
             var currentPageNumber = pageNum;
             var currentPageSize = 16;
@@ -53,6 +61,16 @@ namespace ProjectBook.Serivces
             pageResponse.Products = pagedUsers;
             return pageResponse;
 
+        }
+
+        public Product getProductByAlias(string alias)
+        {
+            var currentProduct = _dbContext.Products.Include(p => p.ProductDetails).Include(p => p.ProductImages).FirstOrDefault(p => p.Alias == alias);
+            if (currentProduct == null)
+            {
+                return null;
+            }
+            return currentProduct;
         }
     }
 }
