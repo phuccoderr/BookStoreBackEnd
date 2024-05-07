@@ -7,12 +7,12 @@ using ProjectBook.Request;
 using Microsoft.AspNetCore.Authorization;
 using ProjectBook.Helpers;
 
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [Authorize(Roles = "Admin")]
     [ApiController]
-    public class UsersController(ApiDbContext dbContext, IConfiguration config,CloudinaryService cloudinaryService) : ControllerBase
+    public class UsersController(ApiDbContext dbContext, IConfiguration config, CloudinaryService cloudinaryService) : ControllerBase
     {
         private readonly ApiDbContext _dbContext = dbContext;
         private readonly IConfiguration _config = config;
@@ -42,13 +42,13 @@ namespace ProjectBook.Controllers
                 }
                 user.Photo = uploadResult.SecureUrl.ToString();
             }
-            
+
             user.Email = userRequest.Email;
-            user.Name = userRequest.Name;   
+            user.Name = userRequest.Name;
             user.Enabled = userRequest.Enabled;
             user.Role = userRequest.Role;
 
-           
+
 
             _dbContext.Users.Add(user);
             _dbContext.SaveChanges();
@@ -57,19 +57,22 @@ namespace ProjectBook.Controllers
         }
 
         [HttpGet("{id}")]
-        
-        public IActionResult getUser(int id) {
+
+        public IActionResult getUser(int id)
+        {
             var currentUser = _dbContext.Users.Find(id);
-            if (currentUser == null) {
+            if (currentUser == null)
+            {
                 return NotFound();
             }
             return Ok(EntityToDTO(currentUser));
         }
 
         [HttpGet("page/{pageNumber}")]
-        public IActionResult getUsers(string sort, int pageNumber = 1, string keyword = null) {
+        public IActionResult getUsers(string sort, int pageNumber = 1, string keyword = null)
+        {
             IQueryable<User> users;
-            switch(sort)
+            switch (sort)
             {
                 case "desc":
                     users = _dbContext.Users.OrderByDescending(u => u.Id);
@@ -86,7 +89,7 @@ namespace ProjectBook.Controllers
             {
                 users = users.Where(u => u.Name.Contains(keyword) || u.Email.Contains(keyword));
             }
- 
+
             var currentPageNumber = pageNumber;
             var currentPageSize = 2;
             int totalItems = users.Count();
@@ -95,7 +98,7 @@ namespace ProjectBook.Controllers
             int endCount = startCount + currentPageSize - 1;
 
             int totalPages = (int)Math.Ceiling((double)totalItems / currentPageSize);
-            
+
             // Kiểm tra giá trị trang hợp lệ
             currentPageNumber = Math.Max(1, Math.Min(currentPageNumber, totalPages));
 
@@ -103,7 +106,7 @@ namespace ProjectBook.Controllers
                           .Take(currentPageSize)
                           .ToList();
 
-           
+
 
             var pageResponse = new UserPageResponse()
             {
@@ -113,22 +116,22 @@ namespace ProjectBook.Controllers
             pageResponse.Total_items = totalItems;
             pageResponse.Current_page = currentPageNumber;
             pageResponse.Start_count = startCount;
-            pageResponse.End_count = endCount;   
+            pageResponse.End_count = endCount;
             return Ok(pageResponse);
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutUsers(int id,[FromForm] UserDTORequest userRequest)
+        public IActionResult PutUsers(int id, [FromForm] UserDTORequest userRequest)
         {
             var currentUser = _dbContext.Users.Find(id);
             if (currentUser == null)
             {
                 return NotFound();
             }
-/*            if (!BC.Verify(userRequest.Password, currentUser.Password))
-            {
-                currentUser.Password = BC.HashPassword(userRequest.Password);
-            }*/
+            /*            if (!BC.Verify(userRequest.Password, currentUser.Password))
+                        {
+                            currentUser.Password = BC.HashPassword(userRequest.Password);
+                        }*/
 
             // CLOUDINARY
             if (userRequest.File != null)
@@ -165,7 +168,7 @@ namespace ProjectBook.Controllers
             return Ok();
         }
 
-        
+
 
         private List<UserResponse> listEntityToDTOs(List<User> users)
         {

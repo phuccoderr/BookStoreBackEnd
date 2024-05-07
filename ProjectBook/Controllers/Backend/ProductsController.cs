@@ -13,7 +13,7 @@ using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [Authorize]
@@ -109,10 +109,10 @@ namespace ProjectBook.Controllers
                 {
                     return BadRequest("Author not Found");
                 }
-                productRequest.Author = author;    
+                productRequest.Author = author;
             }
-            
-            
+
+
 
             if (productRequest.CategoryId > 0)
             {
@@ -162,7 +162,7 @@ namespace ProjectBook.Controllers
 
         // PUT api/<ProductsController>/5
         [HttpPut("{id}")]
-        public IActionResult PutProduct(int id,[FromForm] string data, IFormFile file, IFormFile[] extraFile)
+        public IActionResult PutProduct(int id, [FromForm] string data, IFormFile file, IFormFile[] extraFile)
         {
             var currentProduct = _dbContext.Products.Find(id);
             if (currentProduct == null)
@@ -217,7 +217,7 @@ namespace ProjectBook.Controllers
                 if (detailInDB != null)
                 {
                     detailInDB.Value = detail.Value;
-                } 
+                }
                 else
                 {
                     currentProduct.addProductDetails(detail.Name, detail.Value);
@@ -225,13 +225,13 @@ namespace ProjectBook.Controllers
             }
 
             var detailsInDB = _dbContext.ProductDetails.Where(d => d.ProductId == currentProduct.Id);
-            foreach (var detailInDB in detailsInDB) 
+            foreach (var detailInDB in detailsInDB)
             {
-               if(!removeDetail.Contains(detailInDB.Name))
+                if (!removeDetail.Contains(detailInDB.Name))
                 {
                     _dbContext.ProductDetails.Remove(detailInDB);
                 }
-                
+
             }
 
             // CLOUDINARY
@@ -320,7 +320,7 @@ namespace ProjectBook.Controllers
             {
                 categoriesDTO.Add(new CategoryDTO(cate.Id, cate.Name));
             }
-            return Ok(categoriesDTO );
+            return Ok(categoriesDTO);
         }
     }
 }

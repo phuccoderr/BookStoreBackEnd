@@ -8,7 +8,7 @@ using ProjectBook.Models;
 using ProjectBook.Request;
 using ProjectBook.response;
 using BC = BCrypt.Net.BCrypt;
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [ApiController]
@@ -20,7 +20,7 @@ namespace ProjectBook.Controllers
         [HttpPost]
         [Route("{id}")]
         [Authorize]
-        public IActionResult UpdateAccount([FromForm] UserDTORequest userRequest,int id)
+        public IActionResult UpdateAccount([FromForm] UserDTORequest userRequest, int id)
         {
             var currentUser = _dbContext.Users.Find(id);
             if (currentUser == null)

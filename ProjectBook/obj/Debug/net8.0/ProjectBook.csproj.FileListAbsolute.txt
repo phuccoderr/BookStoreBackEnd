@@ -229,3 +229,4 @@ D:\Project_Csap\ProjectBook\ProjectBook\bin\Debug\net8.0\Scrutor.dll
 D:\Project_Csap\ProjectBook\ProjectBook\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 D:\Project_Csap\ProjectBook\ProjectBook\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
 D:\Project_Csap\ProjectBook\ProjectBook\obj\Debug\net8.0\ProjectBook.sourcelink.json
+D:\Project_Csap\ProjectBook\ProjectBook\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

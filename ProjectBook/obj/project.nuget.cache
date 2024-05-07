@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Th+CYSBIPm7yJFWmwAF6psO9tMYpcr7hy8oTALsZeIYYwSVKSC+lmjVdLtW3HXgXrP0YZ5r5N8VdosjAOPtOAA==",
+  "dgSpecHash": "MWgiytt9TE0G6nEygUbM9Lmt3/01W0uu6Xt08g09TBpDxRdS/uu/G7sXmjmj45l4fuG6WRFxQBGJICrb7797Ng==",
   "success": true,
   "projectFilePath": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\ProjectBook.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Phuc\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Phuc\\.nuget\\packages\\cloudinarydotnet\\1.26.2\\cloudinarydotnet.1.26.2.nupkg.sha512",
     "C:\\Users\\Phuc\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Phuc\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.4\\microsoft.aspnetcore.authentication.google.8.0.4.nupkg.sha512",
     "C:\\Users\\Phuc\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.4\\microsoft.aspnetcore.authentication.jwtbearer.8.0.4.nupkg.sha512",
     "C:\\Users\\Phuc\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\Phuc\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

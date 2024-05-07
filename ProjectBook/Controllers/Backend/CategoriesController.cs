@@ -9,7 +9,7 @@ using ProjectBook.response;
 using ProjectBook.Response;
 using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [ApiController]
@@ -109,7 +109,8 @@ namespace ProjectBook.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult PutCategory(int id, [FromForm] CategoryDTORequest categoryRequest) {
+        public IActionResult PutCategory(int id, [FromForm] CategoryDTORequest categoryRequest)
+        {
             var currentCategory = _dbContext.Categories.Find(id);
             if (currentCategory == null)
             {

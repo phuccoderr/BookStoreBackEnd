@@ -7,12 +7,12 @@ using ProjectBook.response;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [Authorize]
     [ApiController]
-    public class AuthorsController (ApiDbContext dbContext) : ControllerBase
+    public class AuthorsController(ApiDbContext dbContext) : ControllerBase
     {
         private readonly ApiDbContext _dbContext = dbContext;
 

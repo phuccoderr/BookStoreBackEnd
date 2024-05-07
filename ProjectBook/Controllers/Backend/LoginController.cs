@@ -10,7 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using BC = BCrypt.Net.BCrypt;
 
-namespace ProjectBook.Controllers
+namespace ProjectBook.Controllers.Backend
 {
     [Route("api/[controller]")]
     [ApiController]
