@@ -33,7 +33,7 @@ namespace ProjectBook.Controllers.Frontend
         public IActionResult GetProduct(string alias)
         {
             var currentProduct = productService.getProductByAlias(alias);
-            if (currentProduct == null)
+            if (currentProduct == null )
             {
                 return NotFound();
             }

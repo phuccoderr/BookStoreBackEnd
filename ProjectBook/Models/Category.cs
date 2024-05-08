@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ProjectBook.Models
 {
@@ -12,6 +13,7 @@ namespace ProjectBook.Models
         public string Alias { get; set; }
         public string ImageURL { get; set; }
 
+        [JsonIgnore]
         public ICollection<Product> Products { get; set; }
 
         public Category()

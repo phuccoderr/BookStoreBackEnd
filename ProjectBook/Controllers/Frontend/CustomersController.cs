@@ -50,14 +50,15 @@ namespace ProjectBook.Controllers.Frontend
         public IActionResult CustomerLogin(CustomerDTORequest customerRequest)
         {
             var currentCustomer = _dbContext.Customers.FirstOrDefault(c => c.Email == customerRequest.Email);
-            if (currentCustomer.Password == null)
-            {
-                return NotFound();
-            }
             if (currentCustomer == null || !BC.Verify(customerRequest.Password, currentCustomer.Password))
             {
                 return NotFound();
             }
+            if (currentCustomer.Password == null)
+            {
+                return NotFound();
+            }
+            
             // JWT
             var jwt = GenerateToken(currentCustomer.Email);
 

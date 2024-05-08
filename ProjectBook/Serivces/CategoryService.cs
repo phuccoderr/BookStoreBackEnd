@@ -1,11 +1,22 @@
 ﻿using ProjectBook.Data;
 using ProjectBook.DTO;
+using ProjectBook.Models;
 
 namespace ProjectBook.Serivces
 {
     public class CategoryService(ApiDbContext dbContext)
     {
         private readonly ApiDbContext _dbContext = dbContext;
+
+        public Category getCategoryById(int id)
+        {
+            var currentCategory = _dbContext.Categories.FirstOrDefault(c => c.Id == id);
+            if (currentCategory != null)
+            {
+                return currentCategory;
+            }
+            return null;
+        }
 
         public int getCategory (string alias)
         {

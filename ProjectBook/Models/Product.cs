@@ -25,7 +25,6 @@ namespace ProjectBook.Models
         public Author Author { get; set; }
 
         public int CategoryId { get; set; }
-        [JsonIgnore]
         public Category Category { get; set; }
 
         public ICollection<ProductImages> ProductImages { get; set; }

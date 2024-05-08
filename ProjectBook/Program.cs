@@ -39,14 +39,6 @@ builder.Services.AddDbContext<ApiDbContext>(options => options.UseMySql(connecti
 builder.Services.AddMvc().AddXmlDataContractSerializerFormatters(); 
 // Config JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-.AddCookie()
-.AddGoogle(options =>
-{
-    options.ClientId = builder.Configuration["Google:ClientId"]!;
-    options.ClientSecret = builder.Configuration["Google:ClientSecret"]!;
-    options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.SaveTokens = true;
-})
 .AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters

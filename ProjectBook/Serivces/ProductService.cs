@@ -17,18 +17,21 @@ namespace ProjectBook.Serivces
             if (cateId > 0)
             {
                 products = _dbContext.Products.Where(p => p.CategoryId == cateId);
+            } else
+            {
+                products = _dbContext.Products;
             }
            
             switch (sort)
             {
                 case "max_price":
-                    products = _dbContext.Products.OrderByDescending(u => u.Price);
+                    products = products.OrderByDescending(u => u.Price);
                     break;
                 case "min_price":
-                    products = _dbContext.Products.OrderBy(u => u.Price);
+                    products = products.OrderBy(u => u.Price);
                     break;
                 default:
-                    products = _dbContext.Products;
+                    
                     break;
             }
 
