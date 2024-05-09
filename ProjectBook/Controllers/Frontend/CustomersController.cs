@@ -76,6 +76,52 @@ namespace ProjectBook.Controllers.Frontend
             return Ok(authResponse);
         }
 
+        [HttpPut("{id}")]
+        public IActionResult updateCustomer([FromForm] string data, IFormFile image, int id)
+        {
+            var currentCustomer = _dbContext.Customers.Find(id);
+            if (currentCustomer == null)
+            {
+                return NotFound();
+            }
+
+            //convert json -> object
+            var customerRequest = JsonConvert.DeserializeObject<Customer>(data);
+            var customerResponse = new UserResponse();
+            customerResponse.Role = "oauth2";
+            if (currentCustomer.Password != null)
+            {
+                if (customerRequest.Password != null && customerRequest.Password != "")
+                {
+                    currentCustomer.Password = BC.HashPassword(customerRequest.Password);
+                }
+                customerResponse.Role = null;
+            }
+
+            currentCustomer.Name = customerRequest.Name;
+            
+            if (image != null)
+            {
+                _cloudinaryService.deleteImage(currentCustomer.Photo);
+                var uploadResult = _cloudinaryService.SaveImage(image);
+                if (uploadResult.Error != null)
+                {
+                    return BadRequest("Lỗi khi upload hình ảnh");
+
+                }
+                currentCustomer.Photo = uploadResult.SecureUrl.ToString();
+            }
+
+            
+            customerResponse.Email = currentCustomer.Email;
+            customerResponse.Name = currentCustomer.Name;
+            customerResponse.Photo = currentCustomer.Photo;
+            customerResponse.Id = currentCustomer.Id;
+            customerResponse.Enabled = currentCustomer.Enabled;
+            _dbContext.SaveChanges();
+            return Ok(customerResponse);
+        }
+
         [HttpPost("/register")]
         public IActionResult PostCustomer([FromBody] CustomerDTORequest customerRequest)
         {
@@ -127,6 +173,7 @@ namespace ProjectBook.Controllers.Frontend
                 authResponse.Info.Email = currentAccountFB.Email;
                 authResponse.Info.Photo = currentAccountFB.Photo;
                 authResponse.Info.Enabled = currentAccountFB.Enabled;
+                authResponse.Info.Role = "oauth2";
                 return Ok(authResponse);
             }
 
@@ -145,6 +192,7 @@ namespace ProjectBook.Controllers.Frontend
             authResponse.Info.Email = customer.Email;
             authResponse.Info.Photo = customer.Photo;
             authResponse.Info.Enabled = customer.Enabled;
+            authResponse.Info.Role = "oauth2";
             return Ok(authResponse);
         }
 
@@ -181,6 +229,7 @@ namespace ProjectBook.Controllers.Frontend
                 authResponse.Info.Email = currentAccountGoogle.Email;
                 authResponse.Info.Photo = currentAccountGoogle.Photo;
                 authResponse.Info.Enabled = currentAccountGoogle.Enabled;
+                authResponse.Info.Role = "oauth2";
                 return Ok(authResponse);
             }
             var customer = new Customer();
@@ -201,7 +250,7 @@ namespace ProjectBook.Controllers.Frontend
             authResponse.Info.Email = customer.Email;
             authResponse.Info.Photo = customer.Photo;
             authResponse.Info.Enabled = customer.Enabled;
-
+            authResponse.Info.Role = "oauth2";
             return Ok(authResponse);
         }
 
