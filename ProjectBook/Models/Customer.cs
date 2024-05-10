@@ -1,4 +1,6 @@
-﻿namespace ProjectBook.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ProjectBook.Models
 {
     public class Customer
     {
@@ -12,7 +14,6 @@
         public bool Enabled { get; set; }
         public string Verification_Code { get; set; }
         public string Veset_Password_Token { get; set; }
-
-
+        public ICollection<Order> Order { get; set; }
     }
 }

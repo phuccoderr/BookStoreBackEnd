@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
+﻿
+
 using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjectBook.Models
 {
@@ -11,6 +13,7 @@ namespace ProjectBook.Models
         public string Name { get; set; }
         [JsonPropertyName("date_of_birth")]
         public DateTime DateOfBirth { get; set; }
+
         public ICollection<Product> Products { get; set; }
 
         public Author ()

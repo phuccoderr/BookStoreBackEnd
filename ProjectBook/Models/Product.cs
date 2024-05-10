@@ -47,6 +47,10 @@ namespace ProjectBook.Models
             this.ProductDetails.Add(new ProductDetails(detailName, detailValue,this));
         }
 
+        public float GetDiscount()
+        {
+            return Price - Price * (Sale / 100);
+        }
 
     }
 }
