@@ -1,0 +1,182 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project_Csap\\ProjectBook\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\controllers\\frontend\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\controllers\\frontend\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\controllers\\frontend\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\controllers\\frontend\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\controllers\\frontend\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\controllers\\frontend\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\serivces\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\serivces\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\models\\orderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\models\\orderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\response\\cartproductresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\response\\cartproductresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\models\\checkoutinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\models\\checkoutinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\controllers\\frontend\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\controllers\\frontend\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|d:\\project_csap\\projectbook\\projectbook\\response\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE7186AD-27B8-4FF8-BA33-888763525A80}|ProjectBook\\ProjectBook.csproj|solutionrelative:projectbook\\response\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CustomersController.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Controllers\\Frontend\\CustomersController.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CustomersController.cs",
+              "RelativeToolTip": "ProjectBook\\Controllers\\Frontend\\CustomersController.cs",
+              "ViewState": "AQIAAOkAAAAAAAAAAADwv/4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T12:56:53.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\OrderController.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Controllers\\Frontend\\OrderController.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\OrderController.cs",
+              "RelativeToolTip": "ProjectBook\\Controllers\\Frontend\\OrderController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T06:24:31.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Serivces\\CartService.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Serivces\\CartService.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Serivces\\CartService.cs",
+              "RelativeToolTip": "ProjectBook\\Serivces\\CartService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAcwDsAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T01:09:43.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderDetails.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\OrderDetails.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Models\\OrderDetails.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\OrderDetails.cs",
+              "RelativeToolTip": "ProjectBook\\Models\\OrderDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T16:36:09.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Models\\Order.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\Order.cs",
+              "RelativeToolTip": "ProjectBook\\Models\\Order.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAYwAQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T16:31:56.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CheckoutInfo.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\CheckoutInfo.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Models\\CheckoutInfo.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Models\\CheckoutInfo.cs",
+              "RelativeToolTip": "ProjectBook\\Models\\CheckoutInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T16:31:34.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Controllers\\Frontend\\CheckoutController.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CheckoutController.cs",
+              "RelativeToolTip": "ProjectBook\\Controllers\\Frontend\\CheckoutController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T16:18:59.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartProductResponse.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Response\\CartProductResponse.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Response\\CartProductResponse.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Response\\CartProductResponse.cs",
+              "RelativeToolTip": "ProjectBook\\Response\\CartProductResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T15:38:43.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CartResponse.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Response\\CartResponse.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Response\\CartResponse.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Response\\CartResponse.cs",
+              "RelativeToolTip": "ProjectBook\\Response\\CartResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T15:30:32.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CartController.cs",
+              "RelativeDocumentMoniker": "ProjectBook\\Controllers\\Frontend\\CartController.cs",
+              "ToolTip": "D:\\Project_Csap\\ProjectBook\\ProjectBook\\Controllers\\Frontend\\CartController.cs",
+              "RelativeToolTip": "ProjectBook\\Controllers\\Frontend\\CartController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAYwDkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T15:24:22.088Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
