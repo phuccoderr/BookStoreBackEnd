@@ -236,6 +236,9 @@ namespace ProjectBook.Migrations
                     b.Property<float>("Price")
                         .HasColumnType("float");
 
+                    b.Property<float>("Quantity")
+                        .HasColumnType("float");
+
                     b.Property<float>("Sale")
                         .HasColumnType("float");
 

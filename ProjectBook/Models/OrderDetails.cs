@@ -14,5 +14,17 @@ namespace ProjectBook.Models
 
         public int ProductId { get; set; }
         public Product Product { get; set; }
+
+        public OrderDetails ()
+        {
+
+        }
+
+        public OrderDetails(int quantity, float productCost, float subtotal)
+        {
+            this.Quantity = quantity;
+            this.Product_cost = productCost;
+           this.Total = subtotal;
+        }
     }
 }

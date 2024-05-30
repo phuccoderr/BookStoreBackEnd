@@ -10,7 +10,7 @@ using ProjectBook.response;
 namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
-    [Authorize]
+    /*[Authorize]*/
     [ApiController]
     public class AuthorsController(ApiDbContext dbContext) : ControllerBase
     {
@@ -24,10 +24,10 @@ namespace ProjectBook.Controllers.Backend
             switch (sort)
             {
                 case "desc":
-                    authors = _dbContext.Author.OrderByDescending(u => u.Id);
+                    authors = _dbContext.Author.OrderByDescending(u => u.Id); //  5 4 3 2 1
                     break;
                 case "asc":
-                    authors = _dbContext.Author.OrderBy(u => u.Id);
+                    authors = _dbContext.Author.OrderBy(u => u.Id); // 1 2 3 4 5
                     break;
                 default:
                     authors = _dbContext.Author;
@@ -40,7 +40,7 @@ namespace ProjectBook.Controllers.Backend
             }
 
             var currentPageNumber = pageNumber;
-            var currentPageSize = 2;
+            var currentPageSize = 5;
             int totalItems = authors.Count();
 
             int startCount = (pageNumber - 1) * currentPageSize + 1;

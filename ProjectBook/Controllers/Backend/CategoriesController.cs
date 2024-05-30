@@ -13,7 +13,7 @@ namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [ApiController]
-    [Authorize]
+    /*[Authorize]*/
     public class CategoriesController(ApiDbContext dbContext, CloudinaryService cloudinaryService) : ControllerBase
     {
         private readonly ApiDbContext _dbContext = dbContext;
@@ -26,10 +26,10 @@ namespace ProjectBook.Controllers.Backend
             switch (sort)
             {
                 case "desc":
-                    categories = _dbContext.Categories.OrderByDescending(u => u.Id);
+                    categories = _dbContext.Categories.OrderByDescending(u => u.Id); // 5 4 3 2 1
                     break;
                 case "asc":
-                    categories = _dbContext.Categories.OrderBy(u => u.Id);
+                    categories = _dbContext.Categories.OrderBy(u => u.Id); // 1 2 3 4 5
                     break;
                 default:
                     categories = _dbContext.Categories;

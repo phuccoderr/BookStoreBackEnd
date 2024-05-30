@@ -190,6 +190,7 @@ namespace ProjectBook.Controllers.Backend
             currentProduct.Price = productRequest.Price;
             currentProduct.Sale = productRequest.Sale;
             currentProduct.Enabled = productRequest.Enabled;
+            currentProduct.Quantity = productRequest.Quantity;
 
             currentProduct.UpdatedAt = DateTime.Now;
 

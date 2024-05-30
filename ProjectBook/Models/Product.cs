@@ -12,6 +12,7 @@ namespace ProjectBook.Models
         public string MainImage { get; set; }
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
+        public float Quantity { get; set; }
         public float Cost { get; set; }
         public float Price { get; set; }
         public float Sale {  get; set; }
