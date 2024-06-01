@@ -42,7 +42,7 @@ namespace ProjectBook.Serivces
                 detail.Product = item.Product;
                 detail.Quantity = item.Quantity;
                 detail.Total = item.Product.Price * item.Quantity;
-                detail.Product_cost = item.Product.Price;
+                detail.Product_cost = item.Product.Cost;
                 order.Details.Add(detail);
                 var currentProduct = _dbContext.Products.FirstOrDefault(p => p.Id == item.Product.Id);
                 currentProduct.Quantity = currentProduct.Quantity - item.Quantity;

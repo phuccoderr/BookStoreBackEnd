@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectBook.Data;
 using ProjectBook.Helpers;
@@ -11,6 +12,7 @@ using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
+    [Authorize]
     [ApiController]
     public class OrdersController(ApiDbContext dbContext) : ControllerBase
     {

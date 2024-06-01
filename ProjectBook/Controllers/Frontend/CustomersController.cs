@@ -21,6 +21,7 @@ using CloudinaryDotNet;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using ProjectBook.DTO;
 using System;
+using Microsoft.AspNetCore.Authorization;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ProjectBook.Controllers.Frontend
@@ -32,19 +33,6 @@ namespace ProjectBook.Controllers.Frontend
         private readonly ApiDbContext _dbContext = dbContext;
         private readonly CloudinaryService _cloudinaryService = cloudinaryService;
         private readonly IConfiguration _config = config;
-        // GET: api/<CustomersController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<CustomersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
 
         [HttpPost("/login")]
         public IActionResult CustomerLogin(CustomerDTORequest customerRequest)
@@ -55,6 +43,11 @@ namespace ProjectBook.Controllers.Frontend
                 return NotFound();
             }
             if (currentCustomer.Password == null)
+            {
+                return NotFound();
+            }
+            
+            if (currentCustomer.Enabled == false)
             {
                 return NotFound();
             }
@@ -77,6 +70,7 @@ namespace ProjectBook.Controllers.Frontend
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult updateCustomer([FromForm] string data, IFormFile image, int id)
         {
             var currentCustomer = _dbContext.Customers.Find(id);

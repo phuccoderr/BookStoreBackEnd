@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjectBook.Data;
 using ProjectBook.Models;
@@ -8,6 +9,7 @@ using ProjectBook.Response;
 namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
+    [Authorize]
     [ApiController]
     public class CustomersController(ApiDbContext dbContext) : ControllerBase
     {

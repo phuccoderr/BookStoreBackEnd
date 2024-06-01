@@ -13,7 +13,7 @@ namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
     [ApiController]
-    /*[Authorize]*/
+    [Authorize]
     public class CategoriesController(ApiDbContext dbContext, CloudinaryService cloudinaryService) : ControllerBase
     {
         private readonly ApiDbContext _dbContext = dbContext;

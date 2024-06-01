@@ -10,7 +10,7 @@ using ProjectBook.response;
 namespace ProjectBook.Controllers.Backend
 {
     [Route("api/auth/[controller]")]
-    /*[Authorize]*/
+    [Authorize]
     [ApiController]
     public class AuthorsController(ApiDbContext dbContext) : ControllerBase
     {

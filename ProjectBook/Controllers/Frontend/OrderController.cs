@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectBook.Data;
@@ -7,7 +8,8 @@ namespace ProjectBook.Controllers.Frontend
 {
     [Route("api/auth/[controller]")]
     [ApiController]
-    
+    [Authorize]
+
     public class OrderController(ApiDbContext dbContext) : ControllerBase
     {
         private readonly ApiDbContext _dbContext =dbContext;
